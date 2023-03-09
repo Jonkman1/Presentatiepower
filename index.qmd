@@ -40,7 +40,6 @@ editor: visual
 
 ## Basis van `custom.scss`
 
-
     /*-- scss:defaults --*/
 
     /*-- scss:rules --*/
@@ -157,7 +156,6 @@ Open nu de `.scss`-file. Kleuren moet je in relatie bekijken. Veel kan gebeuren 
 Bovenstaande kan, maar [sass vaiabelen](https://sass-lang.com/documentation/variables) gebruiken vind hij handiger.
 
 Daarvoor gebruikt hij prefix `theme-` en de beschrijvende namen zodat hij weet wat wat is.
-
 
     /*-- scss:defaults --*/
     $theme-darkblue: #01364C;
