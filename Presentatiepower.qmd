@@ -1,0 +1,284 @@
+---
+title: "Presentatiepower"
+subtitle: "De kunst van presenteren"
+author: Emil Hvitfeldt, bewerking Harrie Jonkman
+format: revealjs
+editor: visual
+---
+
+## Presentatiepower
+
+- Vorig jaar schreef Emil Hvitfeldt twee blogs over de kunst van presenteren onder de titel *Slidecraft*
+- De [eerste](https://www.emilhvitfeldt.com/post/slidecraft-colors-fonts/) ging over *kleuren en lettertypes*
+- De [tweede](https://www.emilhvitfeldt.com/post/slidecraft-code-output/) ging over *code en output*
+- Deze inzichten presenteren en omzetten in een mooie presentatie.
+
+## Quarto
+
+- Gebruik hier het programma `Quarto` en dan de techniek `Reveal JS`.
+- Inzichten kunnen allicht ook met ander programma's worden gebruikt en ook met andere technieken van Quarto zoals `Beamer`en `Powerpoint`.
+...
+- Doel is een functionele en esthetische presentatie.
+
+## Thema kiezen
+
+- Bij het thema gaat het om verschillende delen van de pagina (zoals kleuren, lettertypes, afmetingen, vormen).
+- De twee belangrijkste zijn allicht *kleuren* en *lettertypes*.
+- Doel is om in weinig tijd (max. 20-30 minuten) een goed thema-uitgangspunt vast te stellen.
+
+## Twee mogelijkheden
+- We kunnen het thema vaststellen [customize the ](https://quarto.org/docs/presentations/revealjs/themes.html#customizing-themes).   
+- We kunnen ook voorbij de basis gaan door [.scss file](https://sass-lang.com/) toe te voegen. 
+
+## Instellen van 'theme`
+
+```
+---
+format:
+  revealjs: 
+    theme: [default, custom.scss]
+---
+```
+
+
+## Basis van `custom.scss`
+
+```
+
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+
+```
+
+## Drie typen kleuren
+- background colors   
+- text colors
+- contrast colors
+
+## Enkele vuistregels
+- 3-6 kleuren voldoet
+- 10 kan maar dan moet je zorgvuldig zijn    
+- Een simple thema wil een wit of donkere kleur voor achtergrond en een tekstkleur.
+- Donkere tekst op lichte achtergrond of lichte tekst op donkere achtergrond.
+- Daarnaast nog een contrastkleur die bij de achtergrond en tekst past.
+
+## Thema's 
+
+- Default 
+- Tien andere thema's (beige, blood, dark, league, moon, night, serif, simple, sky, solarized)
+
+
+## Thema zelf instellen
+
+```
+---
+title: "Presentation"
+format:
+  revealjs: 
+    theme: dark
+---
+
+```
+
+## Kleuren vinden
+
+- De thema's geven jou inspiratie
+- Je kunt ook zelf gaan zoeken, bv. op [pinterest](https://nl.pinterest.com/)
+- Je kunt ook gerichter zoeken door woorden toe te voegen als zee, strand, Halloween of pastel.
+
+## Uitgangspunt bij kleuren vinden
+
+**Hoge contrast tussen de kleuren**
+
+
+## Controleren van contrasten
+
+De contrasten kun je controleren op internet.
+
+- [https://colourcontrast.cc/](https://colourcontrast.cc/) is een mogelijkheid
+
+![](images/Screenshot1.png){width=20%}
+
+- [Color Contrast Checker by Coolers](https://coolors.co/contrast-checker/580b3a-f8f8f8) is een andere mogelijkheid
+
+![](images/Screenshot2.png){width=20%}
+
+## Stappen voor een goede keuze
+- Zoek een palet die je mooi vindt   
+- Kies dan 1-2 achtergrondkleuren, 1-2 tekstkleuren en 1-3 contrastkleuren   
+- Valideer in de contrast checker deze keus en pas deze aan als het nodig is   
+- Kijk ook of de kleur geschikt is voor kleurenblinden
+
+## Kleuren toepassen
+
+- Om kleuren uit te zoeken gebruikt hij graag [ColorSlurp](https://colorslurp.com/)
+
+- Hij vond dit [blauw en gele kleuren palet](https://nl.pinterest.com/pin/281123201723784541/) op Pinterest.
+
+![](images/Screenshot3.png){width=90%}
+
+## Kleurencodes
+
+Deze codes horen bij de vijf kleuren
+
+```
+*Orient*
+02577B
+
+*Fountain Blue*
+5CB4C2
+
+*Morning Glory*
+99D9DD
+
+*Mystic*
+E1E8EB
+
+*Selective Yellow*
+F4BA02
+
+```
+
+## Controleren
+
+Ik wil de donkerste als achtergrond en de lichtse als tekstkleur gebruiken. Dit is het resultaat
+
+![](images/Screenshot4.png)
+
+## Aanpassen
+
+Door de knoppen van de Contrast Checker wat aan te passen krijgen ik dit:
+
+![](images/Screenshot5.png)
+
+## Overzetten naar .scss
+
+Open nu de `.scss`-file. Kleuren moet je in relatie bekijken. Veel kan gebeuren door `$body-bg`, `$body-color` en `$link-color` vast te stellen. Dit zet je dan in `scss:defaults`.
+
+```
+/*-- scss:defaults --*/
+$body-bg: #01364C;
+$body-color: #F7F8F9;
+$link-color: #99D9DD;
+
+/*-- scss:rules --*/
+
+```
+
+## Aanpassen 
+Bovenstaande kan, maar [sass vaiabelen](https://sass-lang.com/documentation/variables) gebruiken vind hij handiger.
+
+Daarvoor gebruikt hij prefix `theme-` en de beschrijvende namen zodat hij weet wat wat is.
+
+```
+
+/*-- scss:defaults --*/
+$theme-darkblue: #01364C;
+$theme-blue: #99D9DD;
+$theme-white: #F7F8F9;
+$theme-yellow: #F4BA02;
+
+$body-bg: $theme-darkblue;
+$body-color: $theme-white;
+$link-color: $theme-blue;
+
+/*-- scss:rules --*/
+
+```
+
+## Resultaat
+
+Natuurlijk is er meer mogelijk, maar dit is het voorlopige resultaat.
+
+![](images/Screenshot6.png)
+
+## Meer mogelijkheden
+
+- Er zijn veel meer mogelijk voor [sass variabelen](https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables). 
+
+- Zie ook [sass kleur functies](https://sass-lang.com/documentation/modules/color)
+
+## Kop wat aanpassen
+Laten we voor nu de kop wat aanpassen, via `$presentation-heading-color`
+
+```
+/*-- scss:defaults --*/
+$theme-darkblue: #01364C;
+$theme-blue: #99D9DD;
+$theme-white: #F7F8F9;
+$theme-yellow: #F4BA02;
+
+$body-bg: $theme-darkblue;
+$body-color: $theme-white;
+$link-color: $theme-blue;
+$presentation-heading-color: lighten($theme-blue, 15%);
+
+/*-- scss:rules --*/
+
+```
+
+## Resultaat
+
+Dat gaat er zo uitzien
+
+![](images/Screenshot7.png)
+
+## Lettertypen vinden
+
+Net als bij kleuren kun je ook zelf lettertypes vinden, bv. via [fonts.google.com](https://fonts.google.com/)
+
+![](images/Screenshot8.png)
+
+## Keuze voor tekst en koppen
+
+We kiezen voor [Manrope](https://fonts.google.com/specimen/Manrope) voor tekst
+
+![Manrope](images/Screenshot9.png)
+
+[IBM Plex Serif](https://fonts.google.com/specimen/IBM+Plex+Serif) voor koppen
+
+![IBM Plex Serif](images/Screenshot10.png)
+
+
+## XXX
+
+
+## Toepassen lettertypes
+
+- Begin met toevoegen van `@import` en plaats dat in het `scss:defaults` deel van de `.scss` file. 
+
+xx
+
+Dat ziet er dan zo uit
+
+```
+/*-- scss:defaults --*/
+$theme-darkblue: #01364C;
+$theme-blue: #99D9DD;
+$theme-white: #F7F8F9;
+$theme-yellow: #F4BA02;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+$body-bg: $theme-darkblue;
+$body-color: $theme-white;
+$link-color: $theme-blue;
+$presentation-heading-color: lighten($theme-blue, 15%);
+
+$font-family-sans-serif: 'Manrope', sans-serif;
+$presentation-heading-font: 'IBM Plex Serif', serif;
+
+/*-- scss:rules --*/
+
+```
+
+## Resultaat
+
+Het ziet er dan zo uit
+
+![](images/Screenshot11.png)
+xxx
+
+
