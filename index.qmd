@@ -259,21 +259,19 @@ Het ziet er dan zo uit
 
 We moeten de kleuren nog kunnen gebruiken op delen van de tekst. Laten we eerst twee klassen benoemn namelijk `.blue` en `.yellow`, die de tekstdelen veranderen en met `font-weight: bold` vet maken. We zetten de twee klassen in het `scss: rules` deel.
 
-```
-/*-- scss:rules --*/
+    /*-- scss:rules --*/
 
-.blue {
-  color: $theme-blue;
-  font-weight: bold;
-}
+    .blue {
+      color: $theme-blue;
+      font-weight: bold;
+    }
 
-.yellow {
-  color: $theme-yellow;
-  font-weight: bold;
-}
-```
+    .yellow {
+      color: $theme-yellow;
+      font-weight: bold;
+    }
 
-## Toepassen via visual editor van RStudio. 
+## Toepassen via visual editor van RStudio.
 
 Kan via `Format`en dan `Span`
 
@@ -285,15 +283,11 @@ Klik op het Classes veld
 
 ![](images/Screenshot13.png)
 
-
 ## Toepassen via Source editor van RStudio
 
 Je kunt ook typen
 
-```
-[Quarto]{.blue} enables you to weave together [content]{.yellow} and [executable code]{.yellow} into a **finished presentation**. To learn more about [Quarto]{.blue} presentations see <https://quarto.org/docs/presentations/>.
-
-```
+    [Quarto]{.blue} enables you to weave together [content]{.yellow} and [executable code]{.yellow} into a **finished presentation**. To learn more about [Quarto]{.blue} presentations see <https://quarto.org/docs/presentations/>.
 
 ## Resultaat
 
@@ -303,11 +297,9 @@ Je kunt ook typen
 
 We kunnen ook nog de links onderlijnen. Ook dat wordt in het `css rules` deel geplaatst. Gebruik daarbij het `.reveal .slide` prefix om de default te overschrijven.
 
-```
-.reveal .slide a {
-  text-decoration: underline;
-}
-```
+    .reveal .slide a {
+      text-decoration: underline;
+    }
 
 ## Resultaat
 
@@ -317,44 +309,40 @@ We kunnen ook nog de links onderlijnen. Ook dat wordt in het `css rules` deel ge
 
 [Quarto]{.blue} enables you to weave together [content]{.yellow} and [executable code]{.yellow} into a **finished presentation**. To learn more about [Quarto]{.blue} presentations see <https://quarto.org/docs/presentations/>.
 
-
-
 ## Tot slot scss file
 
-```
-/*-- scss:defaults --*/
-$theme-darkblue: #01364C;
-$theme-blue: #99D9DD;
-$theme-white: #F7F8F9;
-$theme-yellow: #F4BA02;
+    /*-- scss:defaults --*/
+    $theme-darkblue: #01364C;
+    $theme-blue: #99D9DD;
+    $theme-white: #F7F8F9;
+    $theme-yellow: #F4BA02;
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
-$body-bg: $theme-darkblue;
-$body-color: $theme-white;
-$link-color: $theme-blue;
-$presentation-heading-color: lighten($theme-blue, 15%);
+    $body-bg: $theme-darkblue;
+    $body-color: $theme-white;
+    $link-color: $theme-blue;
+    $presentation-heading-color: lighten($theme-blue, 15%);
 
-$font-family-sans-serif: 'Manrope', sans-serif;
-$presentation-heading-font: 'IBM Plex Serif', serif;
+    $font-family-sans-serif: 'Manrope', sans-serif;
+    $presentation-heading-font: 'IBM Plex Serif', serif;
 
-/*-- scss:rules --*/
+    /*-- scss:rules --*/
 
-.blue {
-  color: $theme-blue;
-  font-weight: bold;
-}
+    .blue {
+      color: $theme-blue;
+      font-weight: bold;
+    }
 
-.yellow {
-  color: $theme-yellow;
-  font-weight: bold;
-}
+    .yellow {
+      color: $theme-yellow;
+      font-weight: bold;
+    }
 
-.reveal .slide a {
-  text-decoration: underline;
-}
-```
+    .reveal .slide a {
+      text-decoration: underline;
+    }
 
 ## Code en output
 
@@ -364,7 +352,7 @@ In dit deel gaat het om het styleren van de code en van de output en ook hoe we 
 
 Met `echo: true` zodat we ook de code in de output krijgen
 
-```r
+``` r
 #| echo: true
 library(dplyr)
 
